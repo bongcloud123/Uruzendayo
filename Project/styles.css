@@ -1,0 +1,29 @@
+#Lists{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+#sortable-list
+{
+    border: 1px solid black;
+    padding-right: 10px;
+    
+}
+
+#sortable-list2
+{
+    border: 1px solid black;
+    padding-right: 10px;
+}
+
+.navbar-brand
+{
+    padding: 0%;
+}
+ 
+#adt
+{
+    padding: 10px;
+}

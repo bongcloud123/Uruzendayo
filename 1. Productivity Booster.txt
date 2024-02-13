@@ -1,0 +1,15 @@
+1. Productivity Booster
+	*Kanban Board to organize tasks (Trello API) / to-do list
+	*Pomodoro timer with reward system	
+	*Integration with Spotify for Focus Music
+	
+	Optional
+	*Focus Mode
+	*Upload notes and use highlighter / upload notes to study
+	*Customization
+	*Group study sessions / VC (using WebRTC)
+
+	Languages / Technology 
+
+	*HTML + JS + CSS + ReactJS 
+	*NodeJS + MongoDB
