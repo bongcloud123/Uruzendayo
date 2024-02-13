@@ -3,13 +3,15 @@
 
 <head>
     <link rel="stylesheet" type='text/css' href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-    <script src="/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.272/pdf.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -26,7 +28,10 @@
                 <li class="list1">Item 2</li>
                 <li class="list1">Item 3</li>
             </ul>
-            <button id="adt">Add Task</button>
+            <input type="text" id="newItemText">
+            <button id="adt" type="button" class="btn btn-primary">add</button>
+
+            <script src="C:\Users\midto\Desktop\Uni\Mini Project\Project\script.js"></script>
         </div>
         <div>
             <ul id="sortable-list2">
@@ -35,8 +40,17 @@
                 <li class="list2">Item 3</li>
             </ul>
         </div>
-
+        <div>
+            <ul id="sortable-list3">
+                <li class="list1">Item 1</li>
+                <li class="list1">Item 2</li>
+                <li class="list1">Item 3</li>
+            </ul>
+        </div>
     </div>
+
+    <div id="pdf-viewer"></div>
+
 
     <div class="timer">
         <div class="time" id="time">25:00</div>
@@ -45,7 +59,7 @@
     </div>
     <script src="timer.js"></script>
 
-            
+
 
     <script>
         // Initialize Sortable
@@ -54,6 +68,10 @@
             animation: 150
         });
         var sortable2 = new Sortable(document.getElementById('sortable-list2'), {
+            group: 'shared',
+            animation: 150
+        });
+        var sortable3 = new Sortable(document.getElementById('sortable-list3'), {
             group: 'shared',
             animation: 150
         });
