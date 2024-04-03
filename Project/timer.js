@@ -1,4 +1,4 @@
-let timeLeft = 1500; // 25 minutes in seconds
+let timeLeft = 1500; 
 let timerInterval;
 
 function formatTime(seconds) {
