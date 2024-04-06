@@ -1,0 +1,62 @@
+body
+{
+    background-color: black;
+}
+
+h1
+{
+    color: white;
+    font-family: "Bebas Neue";
+}
+
+#fileInput
+{
+    border-radius: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: translateX(40px);
+    border: 2px solid red;
+    background: white;
+ 
+
+    
+}
+#pdf-viewer{
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+#ctrl
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    justify-items: center;
+}
+.file-input-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .file-input {
+    position: absolute;
+    left: -9999px; /* Hide the default file input */
+  }
+  
+  .file-input-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Bebas Neue";
+  }
+  
+  /* Style when file input is focused */
+  .file-input:focus + .file-input-label {
+    outline: 2px solid #2ecc71;
+  }
+  

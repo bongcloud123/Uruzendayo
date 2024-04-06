@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <img id="humane" src="heero.png" alt="">
+        <button id="adt">Add Task</button>
+        <img id="trash" src="trash.png">
+    </div>
+        <container>
+            <div class="container">
+                <div class="lists">
+                    <h1 align="center" id="todo">To-Do</h1>
+                    <hr>
+                    <ul id="sortable-list">
+                        <li><button type="button" class="btn">Task 1</button></li>
+                        <li><button type="button" class="btn">Task 2</button></li>
+                        <li><button type="button" class="btn">Task 3</button></li>
+                    </ul>
+                </div>
+
+                <div class="lists">
+
+                    <h1 align="center" id="doing">Doing</h1>
+                    <hr>
+                    <ul id="sortable-list2">
+                        <li><button type="button" class="btn">Task 1</button></li>
+                        <li><button type="button" class="btn">Task 2</button></li>
+                        <li><button type="button" class="btn">Task 3</button></li>
+                    </ul>
+                </div>
+
+                <div class="lists">
+                    <h1 align="center" id="done">Done</h1>
+                    <hr>
+                    <ul id="sortable-list3">
+                        <li><button type="button" class="btn">Task 1</button></li>
+                        <li><button type="button" class="btn">Task 2</button></li>
+                        <li><button type="button" class="btn">Task 3</button></li>
+                    </ul>
+                </div>
+            </div>
+        </container>
+
+        <script>
+            // Initialize Sortable
+            var sortable = new Sortable(document.getElementById('sortable-list'), {
+                group: 'shared',
+                animation: 150
+            });
+            var sortable2 = new Sortable(document.getElementById('sortable-list2'), {
+                group: 'shared',
+                animation: 150
+            });
+            var sortable3 = new Sortable(document.getElementById('sortable-list3'), {
+                group: 'shared',
+                animation: 150
+            });
+
+        </script>
+
+</body>
+
+</html>

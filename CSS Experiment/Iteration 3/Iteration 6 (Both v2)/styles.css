@@ -1,0 +1,289 @@
+:root {
+	--red: rgb(255, 0, 0);
+	--yellow: rgb(255, 255, 0);
+	--green: rgb(0, 255, 0);
+}
+
+*::-webkit-scrollbar {
+	display: none;
+}
+
+@keyframes background-pan {
+	from {
+		background-position: 0% center;
+	}
+
+	to {
+		background-position: -200% center;
+	}
+}
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: white;
+	list-style-type: none;
+}
+
+html,
+body {
+	background: #060606;
+}
+
+
+
+.panels {
+	overflow: scroll;
+	/* // will kill scrollTrigger if scroller: ".panels" is not set
+		// required for scroll-snap // dev remove on last panel for content after? */
+	height: 100vh;
+	width: 100%;
+	scroll-snap-type: y mandatory;
+}
+
+.panel {
+	box-shadow: 40px red;
+	scroll-snap-align: start;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: center;
+	background: #1d1e22;
+
+}
+
+.clip {
+	position: sticky;
+	height: 0;
+	/* background:red; */
+	width: 100%;
+	top: 0;
+	margin-bottom: 0;
+}
+
+
+
+
+
+#panel_1 {
+	background-color: black;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	pointer-events: none;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	place-items: center;
+
+}
+
+.hero {
+	color: white;
+	font-family: "Bebas Neue";
+	font-size: 10em;
+	pointer-events: none;
+	margin: 0px;
+	font-weight: 900;
+}
+
+h1>#zen {
+
+	animation: background-pan 3s linear infinite;
+	background: linear-gradient(to right,
+			var(--red),
+			var(--yellow),
+			var(--green),
+			var(--red));
+	background-size: 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	white-space: nowrap;
+}
+
+#subtitle {
+	color: white;
+	font-family: "Teko";
+	font-size: 2em;
+	margin-top: 0px;
+	font-weight: 700;
+	/* transform: translateY(-111px) */
+	;
+
+}
+
+#overlay-section {
+	height: 100vh;
+	width: 100vw;
+	background-color: blue;
+	/* margin-top: 10%; */
+	bottom: 0;
+	/* z-index: 15; */
+
+}
+
+#subtitle {
+	color: white;
+	font-family: "Teko";
+	font-size: 2em;
+	margin-top: 0px;
+	/* transform: translateY(-111px) */
+	;
+
+}
+
+#intro {
+	/* padding-left: 5%; */
+	font-family: "Oswald";
+	font-weight: 600;
+	color: white;
+	font-size: 4em;
+}
+
+#things {
+	/* position: absolute; */
+	width: 100vw;
+	height: 100vh;
+	background-color: yellow;
+
+}
+
+#tdl {
+	font-family: Oswald;
+	font-size: 4em;
+	color: black;
+}
+
+.wrapper {
+	overflow-x: hidden;
+	position: relative;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	width: 300vw;
+	overflow-x: auto;
+}
+
+.card {
+	font-family: "Oswald", sans-serif;
+	text-align: center;
+	color: white;
+	padding: 10px;
+
+}
+
+#todo {
+	background-color: red;
+	color: white;
+	border: 3px solid black;
+	margin-bottom: 1px;
+}
+
+#doing {
+	background-color: yellow;
+	border: 3px solid black;
+	margin-bottom: 1px;
+}
+
+#done {
+	background-color: green;
+	border: 3px solid black;
+	color: white;
+	margin-bottom: 1px;
+}
+
+section {
+	width: 100vw;
+	padding: 20vw 10vw;
+}
+
+.listss{
+	width:100vw	;
+}
+
+.sortable-list {
+	border: 2px solid black;
+	padding-right: 10px;
+	font-family: "Oswald", sans-serif;
+
+}
+
+.btn {
+	border: 1px solid black;
+	color: black;
+
+}
+
+.btn:hover {
+	background-color: yellow;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins';
+}
+.wrapper {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    width: 300vw;
+
+    .col {
+        display: flex;
+        gap: 3em;
+        
+        p {
+            font-size: .8rem;
+        }
+    }
+
+    section {
+        width: 100vw;
+        padding: 20vw 10vw;
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            width: 50vw;
+        }
+
+    }
+}
+
+section {
+    height: 100vh;
+
+}
+
