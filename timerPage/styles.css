@@ -1,0 +1,112 @@
+
+
+/* #Lists{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    color: black;
+
+}
+
+.list-container
+{
+    flex:2;
+    margin-right: 50px;
+} */
+
+.btn{
+    border: 1px solid black;
+    color: black;
+    
+}
+ .btn:hover{
+    background-color: yellow;
+}
+
+/* #sortable-list
+{
+    border: 2px solid black;
+    padding-right: 10px;
+    font-family: "Oswald", sans-serif;
+    
+}
+
+#sortable-list2
+{
+    border: 2px solid black;
+    padding-right: 10px;
+    font-family: "Oswald", sans-serif;
+}
+
+#sortable-list3
+{
+    border: 2px solid black;
+    padding-right: 10px;
+    font-family: "Oswald", sans-serif;
+    
+}
+
+.card
+{
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    
+}
+
+#todo{
+    background-color: red;
+    color: white;
+    border: 3px solid black;
+    margin-bottom: 1px;
+}
+
+#doing{
+    background-color: yellow;
+    border: 3px solid black;
+    margin-bottom: 1px;
+}
+
+#done{
+    background-color: green;
+    border: 3px solid black;
+    color:white;
+    margin-bottom: 1px;
+} */
+
+.timer #time
+{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: relative;
+    font-size: 250%;
+    margin-left: 50%;
+
+}
+
+.timer #start
+{
+position: relative;
+margin-left:50%;
+}
+
+/* #pdf-viewer
+{
+    border: 5px solid black;
+    width: 50%;
+    justify-content: center;
+    
+
+}
+
+.navbar-brand
+{
+    padding: 0%;
+    
+}
+ 
+#adt
+{
+    padding: 10px;
+} */
