@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+  <script type="module">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBkm9J5WvCAzWfN9g0NuodWw3oiedfT6ok",
+        authDomain: "uruzendayo-v2.firebaseapp.com",
+        projectId: "uruzendayo-v2",
+        storageBucket: "uruzendayo-v2.appspot.com",
+        messagingSenderId: "683556963058",
+        appId: "1:683556963058:web:fda65ceeb7a6f5149e066b"
+      };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db= getDatabase();
+    const auth=getAuth(app);
+
+    let email=document.getElementById('email');
+    let password=document.getElementById('password');
+    let form=document.getElementById('signup-form');
+
+    let RegisterUser = evt =>{
+        evt.preventDefault();
+
+        createUserWithEmailAndPassword(auth,email.value,password.value)
+        .then((credentials)=>{
+          set(ref(db,'UsersAuthList/'+ credentials.user.uid),{
+              firstname: fname.value,
+              lastname: lname.value
+          })
+        })
+        .catch((error)=>{
+          alert(error.message);
+          console.log(error.code);
+          console.log(error.message);
+        })
+    }
+
+    form.addEventListener('submit', RegisterUser);
+  </script>
+  
+    <div>
+      <form id="signup-form">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" id="submit">Sign Up</button>
+      </form>
+      
+    </div>
+    <button style="margin-top: 20px;">Sign In</button>
+</body>
+</html>
