@@ -32,6 +32,12 @@ body {
 	background: #060606;
 }
 
+.page-1
+{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
 
 
 .panels {
@@ -283,9 +289,9 @@ body {
 
 .page-2
 {
-	height: 120vh;
+	height: 123vh;
 	width: 100vw;
-    overflow: hidden;
+
 }
 
 .btn2
@@ -425,6 +431,7 @@ body
     grid-row: 1;
     grid-column: 2;
     border-radius: 20px;
+    outline: solid white 2px;
     padding-right: 200px;
     right: 20px;
     margin: 5px;
@@ -504,7 +511,7 @@ body
     height: 45vh;
     background-color: yellow;
     border-radius: 20px;
-    margin: 5px;
+    margin: 3px;
     overflow: hidden;
 }
 
@@ -660,7 +667,7 @@ body
     background-color: green;
 }
 
-input
+.x23 input
 {
     color: black;
     border-radius: 30px;
@@ -669,3 +676,82 @@ input
     background-color: red;
     font-family: "Bebas Neue";
 }
+
+/* Dropdown Button */
+.dropdown-btn {
+    background-color: #4CAF50;
+    font-family: "Bebas Neue";
+    color: white;
+    border-radius: 20px;
+    width: 10%;
+    height: 20%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown content when the dropdown button is clicked */
+.dropdown-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+
+/* Change the display property of the dropdown content when the show class is added */
+.dropdown-content.show {
+    display: block;
+}
+/***********************************************Page2 fr************************************************************/
+.pdf-viewer {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    width: 100%; /* Ensures the viewer takes up the full width of its parent */
+    height: calc(100vh - 20px); /* Adjusts the height to be the full viewport height minus the margin-top */
+    overflow: auto; /* Allows scrolling if the content exceeds the viewer's size */
+}
+
+  
+  #navigation {
+    margin-top: 10px;
+  }
+  
+  #navigation button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  #navigation button:hover {
+    background-color: #0056b3;
+  }
+  
+  #pageNum {
+    margin: 0 10px;
+  }
+
+  #pdftext
+  {
+    font-size: 5em;
+    font-family: "Bebas Neue";
+  }
+
+  .pdf
+  {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+

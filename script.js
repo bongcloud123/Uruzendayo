@@ -317,3 +317,77 @@ onAuthStateChanged(auth, (user) => {
 });
 
 
+document.querySelector('.dropdown-btn').addEventListener('click', function() {
+    document.querySelector('.dropdown-content').classList.toggle('show');
+});
+
+const fileInput = document.getElementById('fileInput');
+const viewerContainer = document.getElementById('viewerContainer');
+const prevPageBtn = document.getElementById('prevPageBtn');
+const nextPageBtn = document.getElementById('nextPageBtn');
+const pageNum = document.getElementById('pageNum');
+
+let pdfDoc = null;
+let currentPage = 1;
+
+fileInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const fileReader = new FileReader();
+  fileReader.onload = function() {
+    const typedArray = new Uint8Array(this.result);
+    renderPDF(typedArray);
+  };
+  fileReader.readAsArrayBuffer(file);
+});
+
+function renderPDF(data) {
+  pdfjsLib.getDocument(data).promise.then(function(pdf) {
+    pdfDoc = pdf;
+    renderPage(currentPage);
+  }).catch(function(reason) {
+    console.error('Error loading PDF: ' + reason);
+  });
+}
+
+function renderPage(pageNumber) {
+  pdfDoc.getPage(pageNumber).then(function(page) {
+    const scale = 1.5;
+    const viewport = page.getViewport({ scale });
+
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    const renderContext = {
+      canvasContext: context,
+      viewport: viewport
+    };
+    const renderTask = page.render(renderContext);
+    renderTask.promise.then(function() {
+      viewerContainer.innerHTML = '';
+      viewerContainer.appendChild(canvas);
+    });
+
+    // Update page number display
+    pageNum.textContent = pageNumber;
+  });
+}
+
+// Event listener for previous page button
+prevPageBtn.addEventListener('click', function() {
+  if (currentPage > 1) {
+    currentPage--;
+    renderPage(currentPage);
+  }
+});
+
+// Event listener for next page button
+nextPageBtn.addEventListener('click', function() {
+  if (currentPage < pdfDoc.numPages) {
+    currentPage++;
+    renderPage(currentPage);
+  }
+});
