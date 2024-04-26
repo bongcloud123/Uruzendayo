@@ -1,8 +1,0 @@
-*To-do lists on Horizontal Scroll and a Recycle Bin at the end to move the Done Tasks (Carousel Effect I think)
-*New Div appears on Scroll (flowparty)
-*Custom Cursor
-*Load Screen ( https://www.awwwards.com/inspiration/loading-screen-snack-with-benefits )
-
-What do we have here page:
-
-https://codepen.io/GreenSock/pen/jOxpVw
