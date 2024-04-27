@@ -15,6 +15,16 @@ var sortable3 = new Sortable(document.getElementById('sortable-list3'), {
     animation: 150
 });
 
+const blob = document.getElementById("blob");
+
+        window.onpointermove = event => {
+            const { clientX, clientY } = event;
+
+            blob.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, { duration: 3000, fill: "forwards" });
+        }
 
 document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.getElementById("login-button");
@@ -27,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+gsap.fromTo("#uru",{x:400,opacity:1},{x:-400,repeat:-1,yoyo:true,ease:"linear",duration:3});
 
 
 

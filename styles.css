@@ -36,44 +36,6 @@ body {
 {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
-}
-
-
-.panels {
-	overflow: scroll;
-	height: 100vh;
-	width: 100%;
-	scroll-snap-type: y mandatory;
-}
-
-.panel {
-	box-shadow: 40px red;
-	scroll-snap-align: start;
-	width: 100%;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0.25);
-	display: flex;
-	justify-content: center;
-	background: #1d1e22;
-
-}
-
-.clip {
-	position: sticky;
-	height: 0;
-	/* background:red; */
-	width: 100%;
-	top: 0;
-	margin-bottom: 0;
-}
-
-
-
-
-
-#panel_1 {
-	background-color: black;
 }
 
 .bg {
@@ -224,6 +186,7 @@ body {
 	animation: rotate 20s infinite;
 	opacity: 0.8;
 	pointer-events: none;
+    /* overflow: hidden; */
 	/* z-index: -1; */
   }
   
@@ -357,6 +320,9 @@ body
     grid-column: 1;
     border-radius: 20px;
     margin: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+    
 }
 
 .x12
@@ -366,27 +332,33 @@ body
     place-items: center;
     height: 20vh;
     width: 20vw;
-    background-color: orange;
+    background-color: rgb(255, 128, 0);
     grid-row: 2;
     grid-column: 1;
     border-radius: 20px;
     margin: 5px;
+    transition: 0.5s;
 
 }
 
 .x13
 {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
     font-family: "Oswald";
     font-size: 3em;
     font-weight: 500;   
     color: white;
     height: 20vh;
     width: 25vw;
-    background-color: blue;
+    background-color: cornflowerblue;
     grid-row: 1;
     grid-column: 2;
     border-radius: 20px;
     margin: 5px;
+    transition: 0.5s;
 }
 
 .x14
@@ -400,6 +372,7 @@ body
     border-radius: 20px;
     margin: 5px;
     bottom: 20px;
+    transition: 0.5s;
 }
 
 .sess {
@@ -490,6 +463,8 @@ body
     margin: 5px;
     overflow: hidden;
 }
+
+
 
 .x22
 {
@@ -756,3 +731,25 @@ body
     justify-content: center;
   }
 
+.x13:hover
+{
+    background-color: navy;
+    font-size: 2em;
+}
+
+.x14:hover
+{
+    background-color: rgb(181, 69, 88);
+}
+
+.x12:hover
+{
+    background-color: orangered;
+}
+
+.x11:hover
+{
+    background-color: rgb(188, 210, 23);
+    font-size: 5em;
+    color: black;
+}
