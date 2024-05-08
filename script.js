@@ -15,6 +15,16 @@ var sortable3 = new Sortable(document.getElementById('sortable-list3'), {
     animation: 150
 });
 
+const blob = document.getElementById("blob");
+
+        window.onpointermove = event => {
+            const { clientX, clientY } = event;
+
+            blob.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, { duration: 3000, fill: "forwards" });
+        }
 
 document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.getElementById("login-button");
@@ -27,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+gsap.fromTo("#uru",{x:400,opacity:1},{x:-400,repeat:-1,yoyo:true,ease:"linear",duration:3});
+gsap.fromTo("#sing",{y:400,opacity:1},{y:-400,repeat:-1,yoyo:true,ease:"linear",duration:5});
 
 
 
@@ -390,4 +402,73 @@ nextPageBtn.addEventListener('click', function() {
     currentPage++;
     renderPage(currentPage);
   }
+});
+
+// Get the current date and time
+function getCurrentDateTime() {
+    let currentDate = new Date();
+    return currentDate;
+}
+
+// Update the HTML element with the current date and time
+// Update the HTML element with the custom formatted date and time
+function updateDateTime() {
+    let dateTimeElement = document.getElementById('currentDateTime');
+    let currentDateTime = getCurrentDateTime();
+
+    // Get individual date and time components
+    let date = formatDate(currentDateTime);
+    let time = formatTime(currentDateTime);
+
+    // Concatenate date and time without a comma
+    let formattedDateTime = `${date} ${time}`;
+
+    // Update the HTML element content
+    dateTimeElement.textContent = formattedDateTime;
+}
+
+// Format date as desired (e.g., "May 4, 2024" -> "May 4 2024")
+function formatDate(dateTime) {
+    return dateTime.toLocaleString('en-US', {
+        month: 'long', // Full month name (e.g., "May")
+        day: '2-digit', // 2-digit day of the month (e.g., "04")
+        year: 'numeric' // 4-digit year (e.g., "2024")
+    });
+}
+
+// Format time as desired (e.g., "3:45:12 PM" -> "15:45:12")
+function formatTime(dateTime) {
+    return dateTime.toLocaleTimeString('en-US', {
+        hour12: false, // Use 24-hour format
+        hour: '2-digit', // 2-digit hour (e.g., "03" or "15" for 24-hour format)
+        minute: '2-digit', // 2-digit minute (e.g., "09")
+        second: '2-digit' // 2-digit second (e.g., "05")
+    });
+}
+
+// Call the function initially and refresh every second
+updateDateTime(); // Call initially
+setInterval(updateDateTime, 1000); // Refresh every 1000ms (1 second)
+
+document.addEventListener('DOMContentLoaded', function() {
+    var menuTrigger = document.querySelector('.menu-trigger');
+    var isMovingLeft = true; // Variable to track the direction
+    var rotationAmount = 0; // Variable to track current rotation amount
+
+    // Add click event listener
+    menuTrigger.addEventListener('click', function() {
+        rotationAmount += 180; // Increment rotation by 180 degrees on every click
+        gsap.to(".menu-trigger", { rotation: rotationAmount }); // Rotate the menu trigger text
+        
+        if (isMovingLeft) {
+            // Animate button to move 200px to the left
+            gsap.to(".menu", { x: "-=200", duration: 0.5 });
+        } else {
+            // Animate button to move 200px to the right
+            gsap.to(".menu", { x: "+=200", duration: 0.5 });
+        }
+
+        // Toggle the direction for the next click
+        isMovingLeft = !isMovingLeft;
+    });
 });

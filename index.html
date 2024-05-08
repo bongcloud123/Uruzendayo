@@ -49,7 +49,7 @@
                         <div class="firsthalf">
                             <div class="firstquarter">
                                 <div class="firstoctet">
-                                    <div class="x11">URUZENDAYO</div>
+                                    <div class="x11"><span id="uru">URUZENDAYO</span> </div>
                                     <div class="x12">
                                         <!-- <img src="images/book.png" alt="" id="book">
                                             <img src="images/timer.png" alt="" id="timer">
@@ -62,7 +62,7 @@
                                 <div class="secondoctet">
 
                                     <div class="x13">
-                                        <div class="hello">Welcome, User</div>
+                                        <div class="hello">WELCOME USER</div>
                                     </div>
 
                                     <div class="x14">
@@ -115,9 +115,11 @@
 
                         <div class="sechalf">
                             <div class="x21">
-                                <div class="leaderheader">Leaderboard
-                                    <img src="images/trophy.png" id="trophy">
-                                </div>
+                                <iframe style="border-radius:12px"
+                                    src="https://open.spotify.com/embed/playlist/20UVk79wGjLFEEeGQAhMGN?utm_source=generator"
+                                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                    loading="lazy"></iframe>
                             </div>
 
                             <div class="x22">
@@ -139,12 +141,7 @@
                                     <button id="saveButton">Save</button>
                                 </div>
 
-                                <!-- <div class="log-remote">
-                                    <button id="loginn-button">LOGIN</button>
-                                    <button id="signupp-button">SIGN UP</button>
-                                    <button id="logoutt-button">Logout</button>
-            
-                                </div> -->
+                                <div id="currentDateTime"></div>
 
                             </div>
 
@@ -174,20 +171,26 @@
     </div>
 
     <div class="page-2">
-        <center><span id="pdftext">PDF EDITOR</span></center>
-        <div class="pdf">
-            <div id="navigation">
-                <button id="prevPageBtn">Previous Page</button>
-                <span id="pageNum"></span>
-                <button id="nextPageBtn">Next Page</button>
-            </div>
-            <input type="file" id="fileInput">
-            <div id="viewerContainer" class="pdf-viewer"></div>
+            <div class="menu">
+        <button class="menu-trigger"><</button>
+        <div class="submenu">
+           <br>
+           <div id="navigation">
+            <button id="prevPageBtn">Previous Page</button>
+            <center><span id="pageNum"></span></center>
+            <button id="nextPageBtn">Next Page</button>   
+            <input type="file" id="fileInput">             
+        </div>
         </div>
     </div>
+        <div id="blur"></div>
+        <center><span id="pdftext">PDF EDITOR</span></center>
+        <div class="pdf">
+   
+            <div id="viewerContainer" class="pdf-viewer"></div>
 
-    
-
+        </div>
+    </div>
 
 </body>
 
