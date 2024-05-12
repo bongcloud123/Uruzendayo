@@ -184,8 +184,6 @@ logoutButton.addEventListener('click', () => {
         });
 });
 
-let timerInterval; // To store the interval reference
-
 // // Start Timer Function
 // function startTimer() {
 //     let minutes = parseInt(document.getElementById("minutes").textContent);
@@ -212,7 +210,7 @@ let timerInterval; // To store the interval reference
 // }
 // Declare timerInterval variable outside the function so it can be accessed globally
 
-
+let timerInterval; // Declare timerInterval variable outside the function so it can be accessed globally
 
 function startTimer() {
     let minutes = parseInt(document.getElementById("minutes").textContent);
@@ -221,8 +219,7 @@ function startTimer() {
     // Prevent the user from leaving the site while the timer is active
     window.addEventListener('beforeunload', function (e) {
         const confirmationMessage = 'This page is asking you to confirm that you want to leave. Your timer is still running.';
-        e.preventDefault(); // Modern browsers support this method to display the confirmation dialog
-        e.returnValue = confirmationMessage; // Fallback for older browsers
+        e.returnValue = confirmationMessage; // Standard way of displaying the confirmation dialog in most browsers
         return confirmationMessage; // Fallback for older browsers
     });
 
@@ -237,7 +234,7 @@ function startTimer() {
         if (minutes < 0) {
             clearInterval(timerInterval);
             window.removeEventListener('beforeunload', function (e) {
-                e.preventDefault(); // Remove the beforeunload event listener when the timer finishes
+                e.returnValue = null; // Remove the beforeunload event listener when the timer finishes
             });
             alert("Time's Up!");
             incrementSessionCount(); // Do something when the timer finishes
@@ -248,6 +245,7 @@ function startTimer() {
         document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
     }, 1000); // Execute every 1 second (1000 milliseconds)
 }
+
 
 
 // Reset Timer Function
