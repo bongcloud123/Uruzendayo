@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="script.js" type="module"></script>
+
+
+</head>
+
+<body>
+
+    <div class="page-1">
+        <div id="blob"></div>
+        <div id="blur"></div>
+
+
+
+        <div class="bg">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="heero.png" id="humane">
+                    <!-- <h2 id="byline">BY BALLS</h2> -->
+                </div>
+                <button id="login-button">LOGIN</button>
+                <button id="signup-button">SIGN UP</button>
+                <button id="logout-button">Logout</button>
+                <button class="dropdown-btn">Console</button>
+                <div class="dropdown-content">
+                    <div class="main">
+                        <div class="firsthalf">
+                            <div class="firstquarter">
+                                <div class="firstoctet">
+                                    <div class="x11"><span id="uru">URUZENDAYO</span> </div>
+                                    <div class="x12">
+                                        <!-- <img src="images/book.png" alt="" id="book">
+                                            <img src="images/timer.png" alt="" id="timer">
+                                            <img src="/images/ChatGPT_800x800.png" id="gpt" alt=""> -->
+                                        <img src="images/sing.png" id="sing" alt="">
+
+                                    </div>
+                                </div>
+
+                                <div class="secondoctet">
+
+                                    <div class="x13">
+                                        <div class="hello">WELCOME USER</div>
+                                    </div>
+
+                                    <div class="x14">
+                                        <div class="sess">0
+                                            <div id="comp">SESSIONS<br> COMPLETED</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="secondq">
+                                <container>
+                                    <div class="container">
+                                        <div class="lists">
+                                            <h1 align="center" id="todo">To-Do</h1>
+
+                                            <ul id="sortable-list" class="listesh">
+                                                <li><button type="button" class="btn">Ani</button></li>
+                                                <li><button type="button" class="btn">Mani 2</button></li>
+                                                <li><button type="button" class="btn">Chai 3</button></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="lists">
+
+                                            <h1 align="center" id="doing">Doing</h1>
+
+                                            <ul id="sortable-list2" class="listesh">
+                                                <li><button type="button" class="btn">Task 1</button></li>
+                                                <li><button type="button" class="btn">Task 2</button></li>
+                                                <li><button type="button" class="btn">Task 3</button></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="lists">
+                                            <h1 align="center" id="done">Done</h1>
+
+                                            <ul id="sortable-list3" class="listesh">
+                                                <li><button type="button" class="btn">Task 1</button></li>
+                                                <li><button type="button" class="btn">Task 2</button></li>
+                                                <li><button type="button" class="btn">Task 3</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </container>
+                            </div>
+                        </div>
+
+                        <div class="sechalf">
+                            <div class="x21">
+                                <iframe style="border-radius:12px"
+                                    src="https://open.spotify.com/embed/playlist/20UVk79wGjLFEEeGQAhMGN?utm_source=generator"
+                                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                    loading="lazy"></iframe>
+                            </div>
+
+                            <div class="x22">
+                                <div id="timer">
+                                    <span id="minutes">01</span>:<span id="seconds">00</span>
+                                </div>
+                                <div class="buttoncontainer">
+                                    <button id="start-button">START</button>
+                                    <button id="reset-button">RESET</button>
+                                </div>
+                            </div>
+
+                            <div class="x23">
+                                <div class="remote">
+                                    <button id="adt" onclick="addTask()">
+                                        Add Task
+                                        <input type="text"></button>
+                                    <button id="rmv">Remove Task</button>
+                                    <button id="saveButton">Save</button>
+                                </div>
+
+                                <div id="currentDateTime"></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 
+                <div class="menu">
+                    <button class="menu-trigger"></
+
+                            <div class="submenu">
+                                <br>
+                                <h2 class="kanb">Kanban</h2><br>
+                                <h2 class="pdf">PDF Editor</h2><br>
+                                <h2 class="abt">About Us</h2><br>
+                                <h2 class="contact">Contact</h2>
+                            </div>
+                </div> -->
+
+            <h1 draggable="false" class="hero">URU<span id="zen">ZEN</span>DAYO</h1>
+            <center>
+                <!-- <h3 id="subtitle">FOCUS UP</h3> -->
+            </center>
+
+        </div>
+    </div>
+
+    <div class="page-2">
+            <div class="menu">
+        <button class="menu-trigger"><</button>
+        <div class="submenu">
+           <br>
+           <div id="navigation">
+            <button id="prevPageBtn">Previous Page</button>
+            <center><span id="pageNum"></span></center>
+            <button id="nextPageBtn">Next Page</button>   
+            <input type="file" id="fileInput">             
+        </div>
+        </div>
+    </div>
+        <div id="blur"></div>
+        <center><span id="pdftext">PDF EDITOR</span></center>
+        <div class="pdf">
+   
+            <div id="viewerContainer" class="pdf-viewer"></div>
+
+        </div>
+    </div>
+    <div>
+        <p align="center"><iframe src="http://10.0.0.52:8501" width="98%" height="1000px"></iframe></p>
+    </div>
+</body>
+
+</html>

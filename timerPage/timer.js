@@ -1,4 +1,4 @@
-let timeLeft = 1500; // 25 minutes in seconds
+let timeLeft = 1500; 
 let timerInterval;
 
 function formatTime(seconds) {
@@ -15,6 +15,21 @@ function startTimer() {
         if (timeLeft === 0) {
             clearInterval(timerInterval);
             alert('Time is up! Take a break.');
+            
+            // Update Firebase database with points
+            const user = firebase.auth().currentUser;
+            if (user) {
+                const userId = user.uid;
+                const userPointsRef = firebase.database().ref(`users/${userId}/points`);
+                
+                userPointsRef.transaction(function(currentPoints) {
+                    return (currentPoints || 0) + 1; // Increment points by 1
+                }).then(function() {
+                    console.log("Points added successfully");
+                }).catch(function(error) {
+                    console.error("Error adding points:", error);
+                });
+            }
         }
     }, 1000);
 }
@@ -42,3 +57,9 @@ document.getElementById('start').addEventListener('click', function() {
 });
 
 document.getElementById('reset').addEventListener('click', resetTimer);
+
+
+// Points system
+
+const db = firebase.firestore();
+const usersCollection = db.collection('Points');

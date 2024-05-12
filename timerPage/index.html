@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.272/pdf.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script type="module">
+    
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+    
+        const firebaseConfig = {
+          apiKey: "AIzaSyBkm9J5WvCAzWfN9g0NuodWw3oiedfT6ok",
+          authDomain: "uruzendayo-v2.firebaseapp.com",
+          projectId: "uruzendayo-v2",
+          storageBucket: "uruzendayo-v2.appspot.com",
+          messagingSenderId: "683556963058",
+          appId: "1:683556963058:web:fda65ceeb7a6f5149e066b"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db= getDatabase();
+        const auth=getAuth(app);
+    </script>    
+
+    <div class="timer">
+        <div class="time" id="time">25:00</div>
+        <button id="start" type="button" class="btn btn-success">Start</button>
+        <button id="reset" type="button" class="btn btn-danger">Reset</button>
+    </div>
+    <script src="timer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
