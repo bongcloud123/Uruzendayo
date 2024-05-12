@@ -62,6 +62,8 @@ const firebaseConfig = {
     appId: "1:683556963058:web:fda65ceeb7a6f5149e066b"
 };
 
+let uidesh;
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth();
@@ -120,6 +122,7 @@ async function getToDoItems(db, uid) {
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid;
+        uidesh=user.uid;
         console.log('User logged in, UID:', uid);
         getToDoItems(db, uid);
         document.getElementById('login-button').style.display = 'none';
@@ -127,6 +130,17 @@ onAuthStateChanged(auth, (user) => {
     } else {
         document.getElementById('logout-button').style.display = 'none';
     }
+});
+
+const saveButton = document.getElementById('saveButton');
+
+saveButton.addEventListener('click', async () => {
+  try {
+    await saveTasksToFirestore(db, uidesh);
+    console.log("Tasks saved successfully!");
+  } catch (error) {
+    console.error("Error saving tasks: ", error);
+  }
 });
 
 // Helper functions (Unchanged)
