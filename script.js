@@ -200,7 +200,7 @@ function startTimer() {
 // Reset Timer Function
 function resetTimer() {
     clearInterval(timerInterval);
-    document.getElementById("minutes").textContent = "1";
+    document.getElementById("minutes").textContent = "25";
     document.getElementById("seconds").textContent = "00";
 }
 
