@@ -79,6 +79,6 @@ body, html {
   
   /* Apply animation to the form */
   #signup-form {
-	animation: fadeIn 0.5s ease;
+	animation: fadeIn 0.6s ease;
   }
   
