@@ -493,6 +493,7 @@ body
     border-radius: 20px;
     margin: 3px;
     overflow: hidden;
+    transition: 0.5s;
 }
 
 .hello
@@ -804,6 +805,7 @@ body
 
 .x23:hover{
     background-color: lightblue;
+    font-size: 20px;
 }
 
 .menu

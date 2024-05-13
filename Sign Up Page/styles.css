@@ -1,273 +1,84 @@
-:root {
-	--red: rgb(255, 0, 0);
-	--yellow: rgb(255, 255, 0);
-	--green: rgb(0, 255, 0);
-}
-
-*::-webkit-scrollbar {
-	display: none;
-}
-
-@keyframes background-pan {
-	from {
-		background-position: 0% center;
-	}
-
-	to {
-		background-position: -200% center;
-	}
-}
-
-
-* {
-	box-sizing: border-box;
+/* Reset default margin and padding */
+body, html {
+	margin: 0;
 	padding: 0;
-	margin: 0;
-	color: white;
-	list-style-type: none;
-}
-
-html,
-body {
-	background: #060606;
-}
-
-
-
-.panels {
-	overflow: scroll;
-	/* // will kill scrollTrigger if scroller: ".panels" is not set
-		// required for scroll-snap // dev remove on last panel for content after? */
-	height: 100vh;
-	width: 100%;
-	scroll-snap-type: y mandatory;
-}
-
-.panel {
-	box-shadow: 40px red;
-	scroll-snap-align: start;
-	width: 100%;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0.25);
-	display: flex;
-	justify-content: center;
-	background: #1d1e22;
-
-}
-
-.clip {
-	/* position: sticky; */
-	height: 0;
-	/* background:red; */
-	width: 100%;
-	top: 0;
-	margin-bottom: 0;
-}
-
-
-h2 {
-	position: absolute;
-	top: 0;
-	margin: 0;
-	padding: calc(100vh - 64px) 50px 0;
-	z-index: 3;
-	left: 0;
-}
-
-.tint {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.1);
-	width: 100vw;
-	height: 100vh;
-	z-index: 2;
-	pointer-events: none;
-}
-
-img {
-	/* border-top:1px solid red; */
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	object-fit: cover;
-	object-position: center center;
-	z-index: 1;
-}
-
-#panel_1 {
-	background-color: black;
-}
-
-.bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-	pointer-events: none;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	place-items: center;
-
-}
-
-.hero {
-	color: black;
-	font-family: "Bebas Neue";
-	font-size: 10em;
-	pointer-events: none;
-	margin: 0px;
-	font-weight: 900;
-}
-
-h1>#zen {
-
-	animation: background-pan 3s linear infinite;
-	background: linear-gradient(to right,
-			var(--red),
-			var(--yellow),
-			var(--green),
-			var(--red));
-	background-size: 200%;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	white-space: nowrap;
-}
-
-#subtitle {
-	color: white;
-	font-family: "Teko";
-	font-size: 2em;
-	margin-top: 0px;
-	font-weight: 700;
-	/* transform: translateY(-111px) */
-	;
-
-}
-
-#overlay-section {
-	height: 100vh;
-	width: 100vw;
-	background-color: blue;
-	/* margin-top: 10%; */
-	bottom: 0;
-	/* z-index: 15; */
-
-}
-
-#subtitle {
-	color: white;
-	font-family: "Teko";
-	font-size: 2em;
-	margin-top: 0px;
-	/* transform: translateY(-111px) */
-	;
-
-}
-
-#intro {
-	/* padding-left: 5%; */
-	font-family: "Oswald";
-	font-weight: 600;
-	color: white;
-	font-size: 4em;
-}
-
-#things {
-	/* position: absolute; */
-	width: 100vw;
-	height: 100vh;
-	background-color: yellow;
-
-}
-
-#tdl {
-	font-family: Oswald;
-	font-size: 4em;
-	color: black;
-}
-
-.wrapper {
-	/* overflow-x: hidden; */
-	position: relative;
-}
-
-.containerr {
+	font-family: 'Roboto', sans-serif;
+	background-color: #f8f9fa;
+  }
+  
+  /* Center the form vertically and horizontally */
+  body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: black;
-	width: 300vw;
-	overflow-x: auto;
-}
-
-.card {
-	font-family: "Oswald", sans-serif;
+	height: 100vh;
+  }
+  
+  /* Style the form container */
+  #signup-form {
+	width: 350px;
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the form title */
+  .form-title {
 	text-align: center;
-	color: white;
-	padding: 10px;
-
-}
-
-#todo {
-	background-color: red;
-	color: white;
-	border: 3px solid black;
-	margin-bottom: 1px;
-}
-
-#doing {
-	background-color: yellow;
-	border: 3px solid black;
-	margin-bottom: 1px;
-}
-
-#done {
-	background-color: green;
-	border: 3px solid black;
-	color: white;
-	margin-bottom: 1px;
-}
-
-section {
-	width: 100vw;
-	padding: 20vw 10vw;
-}
-
-.listss{
-	width:100vw	;
-}
-
-.sortable-list {
-	border: 2px solid black;
-	padding-right: 10px;
-	font-family: "Oswald", sans-serif;
-
-}
-
-.btn {
-	border: 1px solid black;
-	color: black;
-
-}
-
-.btn:hover {
-	background-color: yellow;
-}
-
-#signout
-{
-	background-color: red;
-	border-radius: 35px;
-	width: 8em;
-	z-index: 9999;
-}
-
-
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 20px;
+  }
+  
+  /* Style input fields */
+  input[type="email"],
+  input[type="password"] {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 16px;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+	outline: none;
+	border-color: #5cb85c;
+  }
+  
+  /* Style the submit button */
+  #submit {
+	width: 100%;
+	padding: 12px;
+	border: none;
+	border-radius: 4px;
+	background-color: #5cb85c;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  #submit:hover {
+	background-color: #4cae4c;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  /* Apply animation to the form */
+  #signup-form {
+	animation: fadeIn 0.5s ease;
+  }
+  
